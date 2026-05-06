@@ -9,25 +9,25 @@ import { HeroSection } from '@/components/ui/feature-carousel';
 import { PulseFitHero } from '@/components/ui/pulse-fit-hero';
 
 const categories = [
-  { id: 'wallets', name: 'Wallets', desc: 'Slim & structured', img: 'https://images.unsplash.com/photo-1627123424574-724758594e93?w=600&q=80', href: '/shop/wallets' },
-  { id: 'bags', name: 'Bags', desc: 'Day to evening', img: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&q=80', href: '/shop/bags' },
-  { id: 'belts', name: 'Belts', desc: 'Heritage buckles', img: 'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&q=80', href: '/shop/belts' },
-  { id: 'new-arrivals', name: 'New Arrivals', desc: 'Fresh from the vault', img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80', href: '/shop/new-arrivals' },
+  { id: 'wallets', name: 'Wallets', desc: 'Slim & structured', img: '/images/product-2.jpeg', href: '/shop/wallets' },
+  { id: 'bags', name: 'Bags', desc: 'Day to evening', img: '/images/product-3.jpeg', href: '/shop/bags' },
+  { id: 'belts', name: 'Belts', desc: 'Heritage buckles', img: '/images/product-4.jpg', href: '/shop/belts' },
+  { id: 'new-arrivals', name: 'New Arrivals', desc: 'Fresh from the vault', img: '/images/product-5.jpg', href: '/shop/new-arrivals' },
 ];
 
 const testimonials = [
-  { name: 'Layla Hassan', title: 'Architect, Cairo', text: 'The Pharaoh Bifold is stunning. You can feel the craftsmanship in every stitch. I\'ve never received so many compliments on an accessory.', rating: 5, avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80' },
-  { name: 'Omar Khalil', title: 'Creative Director, Dubai', text: 'AG Store perfectly bridges ancient Egyptian heritage with modern luxury. The Anubis Tote is my daily companion and conversation starter.', rating: 5, avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80' },
-  { name: 'Nour El-Din', title: 'Entrepreneur, Alexandria', text: 'Finally, a brand that honors our roots without being kitschy. The leather quality is unparalleled. Ordered three belts already.', rating: 5, avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80' },
+  { name: 'Layla Hassan', title: 'Architect, Cairo', text: 'The Pharaoh Bifold is stunning. You can feel the craftsmanship in every stitch. I\'ve never received so many compliments on an accessory.', rating: 5, avatar: '/images/product-6.jpg' },
+  { name: 'Omar Khalil', title: 'Creative Director, Dubai', text: 'AG Store perfectly bridges ancient Egyptian heritage with modern luxury. The Anubis Tote is my daily companion and conversation starter.', rating: 5, avatar: '/images/product-7.jpg' },
+  { name: 'Nour El-Din', title: 'Entrepreneur, Alexandria', text: 'Finally, a brand that honors our roots without being kitschy. The leather quality is unparalleled. Ordered three belts already.', rating: 5, avatar: '/images/product-8.jpg' },
 ];
 
 const instagramPosts = [
-  'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&q=80',
-  'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&q=80',
-  'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80',
-  'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&q=80',
-  'https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=400&q=80',
-  'https://images.unsplash.com/photo-1607082349566-187342175e2f?w=400&q=80',
+  '/images/product-9.jpg',
+  '/images/product-1.jpg',
+  '/images/product-2.jpeg',
+  '/images/product-3.jpeg',
+  '/images/product-4.jpg',
+  '/images/product-5.jpg',
 ];
 
 export default function HomePage() {
@@ -47,33 +47,33 @@ export default function HomePage() {
         disclaimer="*Handcrafted in Cairo, Egypt"
         socialProof={{
           avatars: [
-            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
-            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-            "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80",
+            "/images/product-6.jpg",
+            "/images/product-7.jpg",
+            "/images/product-8.jpg",
           ],
           text: "Join over 10,000+ patrons",
         }}
         programs={[
           {
-            image: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=600&q=80",
+            image: "/images/product-9.jpg",
             category: "ESSENTIALS",
             title: "Heritage Wallets",
             onClick: () => window.location.href = '/shop/wallets',
           },
           {
-            image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&q=80",
+            image: "/images/product-1.jpg",
             category: "MODERN",
             title: "Artisan Bags",
             onClick: () => window.location.href = '/shop/bags',
           },
           {
-            image: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&q=80",
+            image: "/images/product-2.jpeg",
             category: "CLASSIC",
             title: "Signature Belts",
             onClick: () => window.location.href = '/shop/belts',
           },
           {
-            image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80",
+            image: "/images/product-3.jpeg",
             category: "EXCLUSIVE",
             title: "New Arrivals",
             onClick: () => window.location.href = '/shop/new-arrivals',
@@ -187,23 +187,23 @@ export default function HomePage() {
         subtitle="Explore the pieces that have defined our legacy and captured the hearts of modern sovereigns everywhere."
         images={[
           {
-            src: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=900&q=80',
+            src: '/images/product-4.jpg',
             alt: 'Premium Leather Bag',
           },
           {
-            src: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=900&q=80',
+            src: '/images/product-5.jpg',
             alt: 'Patron wearing our accessories',
           },
           {
-            src: 'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=900&q=80',
+            src: '/images/product-6.jpg',
             alt: 'Heritage Buckle Belt',
           },
           {
-            src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=80',
+            src: '/images/product-7.jpg',
             alt: 'Patron with our leather goods',
           },
           {
-            src: 'https://images.unsplash.com/photo-1627123424574-724758594e93?w=900&q=80',
+            src: '/images/product-8.jpg',
             alt: 'Structured Wallet',
           },
         ]}
