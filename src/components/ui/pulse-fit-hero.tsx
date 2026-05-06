@@ -68,6 +68,25 @@ export function PulseFitHero({
       role="banner"
       aria-label="Hero section"
     >
+      <div className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden z-0" aria-hidden="true">
+        <h1
+          style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "clamp(40px, 13vw, 200px)",
+            fontWeight: 900,
+            color: "#FFFFFF",
+            opacity: 0.15,
+            whiteSpace: "nowrap",
+            userSelect: "none",
+            letterSpacing: "0.05em",
+            width: "100%",
+            textAlign: "center",
+          }}
+        >
+          AMR GLALA
+        </h1>
+      </div>
+
       {/* Header */}
       {(logo || navigation.length > 0 || ctaButton) && (
         <motion.header

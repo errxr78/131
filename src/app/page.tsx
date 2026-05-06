@@ -8,6 +8,27 @@ import ProductCard from '@/components/ProductCard';
 import { HeroSection } from '@/components/ui/feature-carousel';
 import { PulseFitHero } from '@/components/ui/pulse-fit-hero';
 
+const Watermark = () => (
+  <div className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden z-0" aria-hidden="true">
+    <h1
+      style={{
+        fontFamily: "var(--font-display)",
+        fontSize: "clamp(40px, 13vw, 200px)",
+        fontWeight: 900,
+        color: "#FFFFFF",
+        opacity: 0.15,
+        whiteSpace: "nowrap",
+        userSelect: "none",
+        letterSpacing: "0.05em",
+        width: "100%",
+        textAlign: "center",
+      }}
+    >
+      AMR GLALA
+    </h1>
+  </div>
+);
+
 const categories = [
   { id: 'wallets', name: 'Wallets', desc: 'Slim & structured', img: '/images/product-2.jpeg', href: '/shop/wallets' },
   { id: 'bags', name: 'Bags', desc: 'Day to evening', img: '/images/product-3.jpeg', href: '/shop/bags' },
@@ -108,8 +129,9 @@ export default function HomePage() {
       </section>
 
       {/* ─── CATEGORY GRID ───────────────────────────────────────────── */}
-      <section style={{ padding: 'var(--section-padding) 2rem', background: 'var(--bg-secondary)' }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+      <section style={{ position: 'relative', padding: 'var(--section-padding) 2rem', background: 'var(--bg-secondary)', overflow: 'hidden' }}>
+        <Watermark />
+        <div style={{ position: 'relative', zIndex: 10, maxWidth: '1400px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <p className="section-subtitle">Shop by Category</p>
             <h2 className="section-title">The Royal Collection</h2>
@@ -150,8 +172,9 @@ export default function HomePage() {
       </section>
 
       {/* ─── FEATURED PRODUCTS ───────────────────────────────────────── */}
-      <section style={{ padding: '0 2rem var(--section-padding)', background: 'var(--bg-primary)' }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+      <section style={{ position: 'relative', padding: '0 2rem var(--section-padding)', background: 'var(--bg-primary)', overflow: 'hidden' }}>
+        <Watermark />
+        <div style={{ position: 'relative', zIndex: 10, maxWidth: '1400px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem', paddingTop: 'var(--section-padding)' }}>
             <p className="section-subtitle">Hand-Picked for You</p>
             <h2 className="section-title">Featured Pieces</h2>
@@ -210,8 +233,9 @@ export default function HomePage() {
       />
 
       {/* ─── INSTAGRAM GRID ──────────────────────────────────────────── */}
-      <section style={{ padding: '0 0 var(--section-padding)' }}>
-        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+      <section style={{ position: 'relative', padding: '0 0 var(--section-padding)', overflow: 'hidden' }}>
+        <Watermark />
+        <div style={{ position: 'relative', zIndex: 10, textAlign: 'center', marginBottom: '3rem' }}>
           <p className="section-subtitle">Follow the Journey</p>
           <h2 className="section-title">@AGStore</h2>
           <p style={{ fontFamily: 'var(--font-body)', color: 'var(--sand-dark)', marginTop: '0.5rem' }}>
