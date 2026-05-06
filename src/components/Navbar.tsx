@@ -30,6 +30,7 @@ export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [mounted, setMounted] = useState(false);
 
   const pathname = usePathname();
   const isHome = pathname === '/';
@@ -40,6 +41,7 @@ export default function Navbar() {
   const totalItems = getTotalItems();
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -313,7 +315,7 @@ export default function Navbar() {
                 aria-label="Cart"
               >
                 <ShoppingBag size={20} />
-                {totalItems > 0 && (
+                {mounted && totalItems > 0 && (
                   <span className="cart-badge" style={{ fontSize: '0.6rem', width: '14px', height: '14px' }}>{totalItems}</span>
                 )}
               </button>
