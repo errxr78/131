@@ -1,0 +1,415 @@
+@import "tailwindcss";
+
+:root {
+  /* === LEATHER BRAND ACCENT / BLACK === */
+  --accent-primary: #0A0A0A;
+  --accent-light: #2A2A2A;
+  --accent-dark: #000000;
+  --accent-muted: #555555;
+  --accent-accent: #111111;
+
+  /* Backgrounds — Vintage Leather / Tan */
+  --bg-primary: #BCA382;
+  --bg-secondary: #C8B295;
+  --bg-tertiary: #D4C1A8;
+  --bg-card: #C8B295;
+
+  /* Dark sections — kept for hero overlays only */
+  --obsidian: #0A0A0A;
+  --obsidian-2: #1A1A1A;
+  --obsidian-3: #2A2A2A;
+
+  /* Text — pure charcoal system */
+  --text-primary: #050505;
+  --text-secondary: #222222;
+  --text-muted: #444444;
+  --text-light: #666666;
+
+  /* SHADCN UI COMPATIBILITY */
+  --background: #BCA382;
+  --foreground: #0A0A0A;
+  --card: #C8B295;
+  --card-foreground: #0A0A0A;
+  --popover: #C8B295;
+  --popover-foreground: #0A0A0A;
+  --primary: #0A0A0A;
+  --primary-foreground: #BCA382;
+  --secondary: #C8B295;
+  --secondary-foreground: #0A0A0A;
+  --muted: #D4C1A8;
+  --muted-foreground: #444444;
+  --accent: #C8B295;
+  --accent-foreground: #0A0A0A;
+  --destructive: #C0392B;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(10, 10, 10, 0.15);
+  --input: rgba(10, 10, 10, 0.15);
+  --ring: #0A0A0A;
+  --radius: 0.5rem;
+
+  /* Borders — clean neutral grays */
+  --border-light: rgba(44, 44, 44, 0.1);
+  --border-medium: rgba(44, 44, 44, 0.18);
+
+  /* Sand tones — kept for hero text overlays */
+  --sand: #F0F0F0;
+  --sand-2: #E8E8E8;
+  --sand-dark: #C0C0C0;
+
+  /* Accents */
+  --ruby: #C0392B;
+  --lapis: #2C3E6B;
+
+  /* === TYPOGRAPHY === */
+  --font-display: 'Playfair Display', serif;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-ui: 'Inter', sans-serif;
+  --font-arabic: 'Cairo', 'Tajawal', sans-serif;
+
+  /* === SPACING === */
+  --section-padding: clamp(5rem, 10vw, 10rem);
+
+  /* === TRANSITIONS === */
+  --transition-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === ARABIC SUPPORT === */
+[lang="ar"],
+.arabic,
+.ar {
+  font-family: var(--font-arabic);
+  direction: rtl;
+  text-align: right;
+}
+[dir="rtl"] {
+  font-family: var(--font-arabic);
+}
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--accent-dark); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-primary); }
+
+/* === SELECTION === */
+::selection {
+  background: var(--accent-primary);
+  color: #FFFFFF;
+}
+
+/* === GOLD GRADIENT TEXT === */
+.text-accent-gradient {
+  background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent-primary) 40%, var(--accent-light) 80%, var(--accent-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === EGYPTIAN BORDER ORNAMENT === */
+.egyptian-border {
+  border: 1px solid var(--accent-primary);
+  position: relative;
+}
+.egyptian-border::before,
+.egyptian-border::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--accent-primary);
+  border-style: solid;
+}
+.egyptian-border::before {
+  top: -4px;
+  left: -4px;
+  border-width: 2px 0 0 2px;
+}
+.egyptian-border::after {
+  bottom: -4px;
+  right: -4px;
+  border-width: 0 2px 2px 0;
+}
+
+/* === HIEROGLYPH DIVIDER === */
+.hieroglyph-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.hieroglyph-divider::before,
+.hieroglyph-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent-primary), transparent);
+}
+
+/* === BUTTONS === */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2.5rem;
+  background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent-primary) 50%, var(--accent-light) 100%);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s var(--transition-smooth);
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent-light), var(--accent-primary));
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.btn-primary:hover::before { opacity: 1; }
+.btn-primary span { position: relative; z-index: 1; }
+.btn-primary:hover {
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2.5rem;
+  background: transparent;
+  color: var(--accent-primary);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1.5px solid var(--accent-primary);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s var(--transition-smooth);
+}
+.btn-outline:hover {
+  background: var(--accent-primary);
+  color: #FFFFFF;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.22);
+  transform: translateY(-2px);
+}
+
+/* === MARQUEE === */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 25s linear infinite;
+  display: flex;
+  width: max-content;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* === PRODUCT CARD HOVER === */
+.product-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  transition: transform 0.5s var(--transition-smooth), box-shadow 0.5s var(--transition-smooth);
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+.product-card .card-img { overflow: hidden; }
+.product-card .card-img img {
+  transition: transform 0.7s var(--transition-smooth);
+}
+.product-card:hover .card-img img { transform: scale(1.08); }
+.product-card .card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(255,255,255,0.97) 0%, transparent 100%);
+  padding: 2rem;
+  transform: translateY(100%);
+  transition: transform 0.5s var(--transition-smooth);
+}
+.product-card:hover .card-overlay { transform: translateY(0); }
+
+/* === SECTION TITLES === */
+.section-subtitle {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+/* === CART BADGE === */
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 18px;
+  height: 18px;
+  background: var(--accent-primary);
+  color: #FFFFFF;
+  font-size: 0.65rem;
+  font-weight: 700;
+  font-family: var(--font-ui);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === GOLD SHIMMER === */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.accent-shimmer {
+  background: linear-gradient(90deg, var(--accent-dark) 0%, var(--accent-light) 40%, var(--accent-primary) 50%, var(--accent-light) 60%, var(--accent-dark) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* === STAR RATING === */
+.star-rating {
+  display: flex;
+  gap: 2px;
+  color: var(--accent-primary);
+}
+
+/* === INPUT STYLES === */
+.input-egyptian {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  background: var(--bg-secondary);
+  border: 1.5px solid var(--border-light);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.input-egyptian:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+.input-egyptian::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+/* === GLASS CARD === */
+.glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(44, 44, 44, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
+}
+
+/* === BADGE === */
+.badge-new {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: var(--accent-primary);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.badge-sale {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: var(--ruby);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* === ANIMATED UNDERLINE === */
+.animated-link {
+  position: relative;
+  text-decoration: none;
+}
+.animated-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent-primary);
+  transition: width 0.4s var(--transition-smooth);
+}
+.animated-link:hover::after { width: 100%; }
+
+/* === SECTION BACKGROUNDS === */
+.bg-light-section {
+  background: var(--bg-secondary);
+}
+.bg-tertiary-section {
+  background: var(--bg-tertiary);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  body { font-size: 16px; }
+  .section-title { font-size: clamp(1.75rem, 6vw, 2.5rem); }
+}
