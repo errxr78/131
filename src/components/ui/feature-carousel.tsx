@@ -41,25 +41,6 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroProps>(
         )}
         {...props}
       >
-        <div className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden z-0" aria-hidden="true">
-          <h1
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(40px, 13vw, 200px)",
-              fontWeight: 900,
-              color: "#FFFFFF",
-              opacity: 0.15,
-              whiteSpace: "nowrap",
-              userSelect: "none",
-              letterSpacing: "0.05em",
-              width: "100%",
-              textAlign: "center",
-            }}
-          >
-            AMR GLALA
-          </h1>
-        </div>
-
         {/* Background Gradient */}
         <div className="absolute inset-0 z-0 opacity-20" aria-hidden="true">
             <div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(128,90,213,0.3),rgba(255,255,255,0))]"></div>
@@ -69,11 +50,29 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroProps>(
         {/* Content */}
         <div className="z-10 flex w-full flex-col items-center text-center space-y-8 md:space-y-12">
           {/* Header Section */}
-          <div className="space-y-4">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter max-w-4xl" style={{ fontFamily: 'var(--font-display)' }}>
+          <div className="relative space-y-4">
+            <div className="absolute inset-0 pointer-events-none flex items-center justify-center z-0" aria-hidden="true" style={{ pointerEvents: 'none' }}>
+              <h1
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(40px, 13vw, 200px)",
+                  fontWeight: 900,
+                  color: "#FFFFFF",
+                  opacity: 0.15,
+                  whiteSpace: "nowrap",
+                  userSelect: "none",
+                  letterSpacing: "0.05em",
+                  width: "100%",
+                  textAlign: "center",
+                }}
+              >
+                AMR GLALA
+              </h1>
+            </div>
+            <h1 className="relative z-10 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter max-w-4xl" style={{ fontFamily: 'var(--font-display)' }}>
               {title}
             </h1>
-            <p className="max-w-2xl mx-auto text-muted-foreground md:text-xl" style={{ fontFamily: 'var(--font-body)', color: 'var(--text-secondary)' }}>
+            <p className="relative z-10 max-w-2xl mx-auto text-muted-foreground md:text-xl" style={{ fontFamily: 'var(--font-body)', color: 'var(--text-secondary)' }}>
               {subtitle}
             </p>
           </div>

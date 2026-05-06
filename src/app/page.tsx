@@ -8,8 +8,8 @@ import ProductCard from '@/components/ProductCard';
 import { HeroSection } from '@/components/ui/feature-carousel';
 import { PulseFitHero } from '@/components/ui/pulse-fit-hero';
 
-const Watermark = () => (
-  <div className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden z-0" aria-hidden="true">
+const TitleWatermark = () => (
+  <div className="absolute inset-0 pointer-events-none flex items-center justify-center z-0" aria-hidden="true" style={{ pointerEvents: 'none' }}>
     <h1
       style={{
         fontFamily: "var(--font-display)",
@@ -129,13 +129,13 @@ export default function HomePage() {
       </section>
 
       {/* ─── CATEGORY GRID ───────────────────────────────────────────── */}
-      <section style={{ position: 'relative', padding: 'var(--section-padding) 2rem', background: 'var(--bg-secondary)', overflow: 'hidden' }}>
-        <Watermark />
+      <section style={{ padding: 'var(--section-padding) 2rem', background: 'var(--bg-secondary)', overflow: 'hidden' }}>
         <div style={{ position: 'relative', zIndex: 10, maxWidth: '1400px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <p className="section-subtitle">Shop by Category</p>
-            <h2 className="section-title">The Royal Collection</h2>
-            <p className="ar" style={{ fontFamily: 'var(--font-arabic)', color: 'var(--text-muted)', fontSize: '1rem', marginTop: '0.5rem' }}>المجموعة الملكية</p>
+          <div style={{ position: 'relative', textAlign: 'center', marginBottom: '4rem' }}>
+            <TitleWatermark />
+            <p className="section-subtitle relative z-10">Shop by Category</p>
+            <h2 className="section-title relative z-10">The Royal Collection</h2>
+            <p className="ar relative z-10" style={{ fontFamily: 'var(--font-arabic)', color: 'var(--text-muted)', fontSize: '1rem', marginTop: '0.5rem' }}>المجموعة الملكية</p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
             {categories.map((cat, i) => (
@@ -172,14 +172,14 @@ export default function HomePage() {
       </section>
 
       {/* ─── FEATURED PRODUCTS ───────────────────────────────────────── */}
-      <section style={{ position: 'relative', padding: '0 2rem var(--section-padding)', background: 'var(--bg-primary)', overflow: 'hidden' }}>
-        <Watermark />
+      <section style={{ padding: '0 2rem var(--section-padding)', background: 'var(--bg-primary)', overflow: 'hidden' }}>
         <div style={{ position: 'relative', zIndex: 10, maxWidth: '1400px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem', paddingTop: 'var(--section-padding)' }}>
-            <p className="section-subtitle">Hand-Picked for You</p>
-            <h2 className="section-title">Featured Pieces</h2>
-            <p className="ar" style={{ fontFamily: 'var(--font-arabic)', color: 'var(--text-muted)', fontSize: '1rem', marginTop: '0.5rem' }}>قطع مختارة بعناية</p>
-            <div className="hieroglyph-divider" style={{ maxWidth: '300px', margin: '1.5rem auto 0' }}>
+          <div style={{ position: 'relative', textAlign: 'center', marginBottom: '4rem', paddingTop: 'var(--section-padding)' }}>
+            <TitleWatermark />
+            <p className="section-subtitle relative z-10">Hand-Picked for You</p>
+            <h2 className="section-title relative z-10">Featured Pieces</h2>
+            <p className="ar relative z-10" style={{ fontFamily: 'var(--font-arabic)', color: 'var(--text-muted)', fontSize: '1rem', marginTop: '0.5rem' }}>قطع مختارة بعناية</p>
+            <div className="hieroglyph-divider relative z-10" style={{ maxWidth: '300px', margin: '1.5rem auto 0' }}>
               <span style={{ color: 'var(--accent-primary)', fontSize: '1rem' }}>𓂀</span>
             </div>
           </div>
@@ -233,12 +233,12 @@ export default function HomePage() {
       />
 
       {/* ─── INSTAGRAM GRID ──────────────────────────────────────────── */}
-      <section style={{ position: 'relative', padding: '0 0 var(--section-padding)', overflow: 'hidden' }}>
-        <Watermark />
+      <section style={{ padding: '0 0 var(--section-padding)', overflow: 'hidden' }}>
         <div style={{ position: 'relative', zIndex: 10, textAlign: 'center', marginBottom: '3rem' }}>
-          <p className="section-subtitle">Follow the Journey</p>
-          <h2 className="section-title">@AGStore</h2>
-          <p style={{ fontFamily: 'var(--font-body)', color: 'var(--sand-dark)', marginTop: '0.5rem' }}>
+          <TitleWatermark />
+          <p className="section-subtitle relative z-10">Follow the Journey</p>
+          <h2 className="section-title relative z-10">@AGStore</h2>
+          <p className="relative z-10" style={{ fontFamily: 'var(--font-body)', color: 'var(--sand-dark)', marginTop: '0.5rem' }}>
             Tag us with <span style={{ color: 'var(--accent-primary)' }}>#AGPharaoh</span> to be featured
           </p>
         </div>
