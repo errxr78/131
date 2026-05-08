@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, Star, ChevronDown } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { getFeaturedProducts } from '@/lib/products';
 import ProductCard from '@/components/ProductCard';
 import { HeroSection } from '@/components/ui/feature-carousel';
@@ -36,11 +36,7 @@ const categories = [
   { id: 'new-arrivals', name: 'New Arrivals', desc: 'Fresh from the vault', img: '/images/product-5.jpg', href: '/shop/new-arrivals' },
 ];
 
-const testimonials = [
-  { name: 'Layla Hassan', title: 'Architect, Cairo', text: 'The Pharaoh Bifold is stunning. You can feel the craftsmanship in every stitch. I\'ve never received so many compliments on an accessory.', rating: 5, avatar: '/images/product-6.jpg' },
-  { name: 'Omar Khalil', title: 'Creative Director, Dubai', text: 'AG Store perfectly bridges ancient Egyptian heritage with modern luxury. The Anubis Tote is my daily companion and conversation starter.', rating: 5, avatar: '/images/product-7.jpg' },
-  { name: 'Nour El-Din', title: 'Entrepreneur, Alexandria', text: 'Finally, a brand that honors our roots without being kitschy. The leather quality is unparalleled. Ordered three belts already.', rating: 5, avatar: '/images/product-8.jpg' },
-];
+
 
 const instagramPosts = [
   '/images/product-9.jpg',

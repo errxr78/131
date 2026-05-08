@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { products } from '@/lib/products';
 import ProductCard from '@/components/ProductCard';
-import { SlidersHorizontal, Grid2X2, LayoutList } from 'lucide-react';
+import { Grid2X2, LayoutList } from 'lucide-react';
 
 const categories = [
   { id: 'all', label: 'All Products' },

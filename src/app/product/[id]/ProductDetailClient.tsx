@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingBag, Heart, Star, Check, ChevronDown, ArrowLeft, Share2 } from 'lucide-react';
+import { ShoppingBag, Heart, Star, Check } from 'lucide-react';
 import Link from 'next/link';
 import { Product, useCartStore } from '@/lib/store';
 import ProductCard from '@/components/ProductCard';

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { User, Package, Heart, LogOut, Settings, ChevronRight, Star } from 'lucide-react';
+import { User, Package, Heart, LogOut, Settings, ChevronRight } from 'lucide-react';
 
 type Tab = 'overview' | 'orders' | 'wishlist' | 'settings';
 

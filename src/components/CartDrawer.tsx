@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Plus, Minus, Trash2, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useCartStore } from '@/lib/store';
 
 export default function CartDrawer() {
@@ -113,6 +112,7 @@ export default function CartDrawer() {
                     >
                       {/* Image */}
                       <div style={{ width: '80px', height: '80px', flexShrink: 0, overflow: 'hidden', background: '#5A4F41' }}>
+                        { }
                         <img
                           src={item.image}
                           alt={item.name}

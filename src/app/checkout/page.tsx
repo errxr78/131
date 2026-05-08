@@ -90,21 +90,21 @@ export default function CheckoutPage() {
                     {[['firstName', 'First Name'], ['lastName', 'Last Name']].map(([k, label]) => (
                       <div key={k}>
                         <label style={{ display: 'block', fontFamily: 'var(--font-heading)', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'var(--accent-muted)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>{label}</label>
-                        <input required className="input-egyptian" value={(form as any)[k]} onChange={(e) => update(k, e.target.value)} placeholder={label} />
+                        <input required className="input-egyptian" value={(form as Record<string, string>)[k]} onChange={(e) => update(k, e.target.value)} placeholder={label} />
                       </div>
                     ))}
                   </div>
                   {[['email', 'Email Address', 'email'], ['phone', 'Phone Number', 'tel']].map(([k, label, type]) => (
                     <div key={k} style={{ marginBottom: '1rem' }}>
                       <label style={{ display: 'block', fontFamily: 'var(--font-heading)', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'var(--accent-muted)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>{label}</label>
-                      <input required className="input-egyptian" type={type} value={(form as any)[k]} onChange={(e) => update(k, e.target.value)} placeholder={label} />
+                      <input required className="input-egyptian" type={type} value={(form as Record<string, string>)[k]} onChange={(e) => update(k, e.target.value)} placeholder={label} />
                     </div>
                   ))}
                   <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem', color: 'var(--text-primary)', margin: '2rem 0 1.5rem' }}>Shipping Address</h2>
                   {[['address', 'Street Address'], ['city', 'City'], ['governorate', 'Governorate'], ['zip', 'Postal Code']].map(([k, label]) => (
                     <div key={k} style={{ marginBottom: '1rem' }}>
                       <label style={{ display: 'block', fontFamily: 'var(--font-heading)', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'var(--accent-muted)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>{label}</label>
-                      <input required className="input-egyptian" value={(form as any)[k]} onChange={(e) => update(k, e.target.value)} placeholder={label} />
+                      <input required className="input-egyptian" value={(form as Record<string, string>)[k]} onChange={(e) => update(k, e.target.value)} placeholder={label} />
                     </div>
                   ))}
                   <button type="submit" className="btn-primary" style={{ marginTop: '1.5rem', width: '100%' }}>
@@ -152,14 +152,14 @@ export default function CheckoutPage() {
                   {[['cardName', 'Name on Card', 'text'], ['cardNumber', 'Card Number', 'text']].map(([k, label, type]) => (
                     <div key={k} style={{ marginBottom: '1rem' }}>
                       <label style={{ display: 'block', fontFamily: 'var(--font-heading)', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'var(--accent-muted)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>{label}</label>
-                      <input required className="input-egyptian" type={type} value={(form as any)[k]} onChange={(e) => update(k, e.target.value)} placeholder={label} />
+                      <input required className="input-egyptian" type={type} value={(form as Record<string, string>)[k]} onChange={(e) => update(k, e.target.value)} placeholder={label} />
                     </div>
                   ))}
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
                     {[['expiry', 'MM / YY'], ['cvv', 'CVV']].map(([k, placeholder]) => (
                       <div key={k}>
                         <label style={{ display: 'block', fontFamily: 'var(--font-heading)', fontSize: '0.65rem', letterSpacing: '0.15em', color: 'var(--accent-muted)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>{k === 'expiry' ? 'Expiry' : 'CVV'}</label>
-                        <input required className="input-egyptian" value={(form as any)[k]} onChange={(e) => update(k, e.target.value)} placeholder={placeholder} maxLength={k === 'cvv' ? 3 : 7} />
+                        <input required className="input-egyptian" value={(form as Record<string, string>)[k]} onChange={(e) => update(k, e.target.value)} placeholder={placeholder} maxLength={k === 'cvv' ? 3 : 7} />
                       </div>
                     ))}
                   </div>

@@ -1,10 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingBag, Search, User, Menu, X, Heart, ChevronDown } from 'lucide-react';
+import { ShoppingBag, Search, User, Menu, X, ChevronDown } from 'lucide-react';
 import { useCartStore } from '@/lib/store';
 
 const navLinks = [
@@ -32,8 +31,6 @@ export default function Navbar() {
   const [searchQuery, setSearchQuery] = useState('');
   const [mounted, setMounted] = useState(false);
 
-  const pathname = usePathname();
-  const isHome = pathname === '/';
   // Force dark text style always, since the new hero is light/white
   const useDarkStyle = true;
 
@@ -41,6 +38,7 @@ export default function Navbar() {
   const totalItems = getTotalItems();
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     const handleScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener('scroll', handleScroll, { passive: true });

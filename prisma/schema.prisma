@@ -6,23 +6,85 @@ datasource db {
   provider = "postgresql"
 }
 
+model Admin {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  slug        String    @unique
+  description String?
+  image       String?
+  products    Product[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
 model Product {
-  id          String   @id @default(cuid())
+  id          String      @id @default(cuid())
   name        String
-  description String
+  slug        String      @unique
+  description String      @db.Text
   price       Float
-  category    String
   images      String[]
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  stock       Int         @default(0)
+  isFeatured  Boolean     @default(false)
+  status      String      @default("ACTIVE") // ACTIVE, DRAFT, ARCHIVED
+  
+  categoryId  String
+  category    Category    @relation(fields: [categoryId], references: [id])
+  
+  orderItems  OrderItem[]
+  
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Customer {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  phone     String?
+  address   String?
+  orders    Order[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Order {
-  id         String   @id @default(cuid())
-  userId     String?
-  total      Float
-  status     String   @default("PENDING")
-  items      Json
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  id              String      @id @default(cuid())
+  orderNumber     String      @unique
+  total           Float
+  status          String      @default("PENDING") // PENDING, PROCESSING, SHIPPED, DELIVERED, CANCELLED
+  paymentStatus   String      @default("UNPAID") // UNPAID, PAID, FAILED
+  paymentMethod   String?
+  shippingAddress String
+  
+  customerId      String?
+  customer        Customer?   @relation(fields: [customerId], references: [id])
+  
+  items           OrderItem[]
+  
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+}
+
+model OrderItem {
+  id        String   @id @default(cuid())
+  quantity  Int
+  price     Float    // Price at the time of purchase
+  
+  orderId   String
+  order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  
+  productId String
+  product   Product  @relation(fields: [productId], references: [id])
+  
+  createdAt DateTime @default(now())
 }

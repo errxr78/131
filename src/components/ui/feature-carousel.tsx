@@ -8,13 +8,11 @@ interface HeroProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> 
   title: React.ReactNode;
   subtitle: string;
   images: { src: string; alt: string; }[];
-  appStoreLink?: string;
-  googlePlayLink?: string;
 }
 
 // --- HERO SECTION COMPONENT ---
 export const HeroSection = React.forwardRef<HTMLDivElement, HeroProps>(
-  ({ title, subtitle, images, appStoreLink, googlePlayLink, className, ...props }, ref) => {
+  ({ title, subtitle, images, className, ...props }, ref) => {
     const [currentIndex, setCurrentIndex] = React.useState(Math.floor(images.length / 2));
 
     const handleNext = React.useCallback(() => {
@@ -112,6 +110,7 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroProps>(
                       visibility: Math.abs(pos) > 1 ? 'hidden' : 'visible',
                     }}
                   >
+                    { }
                     <img
                       src={image.src}
                       alt={image.alt}

@@ -30,6 +30,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
       {/* Image Container */}
       <div className="card-img" style={{ position: 'relative', aspectRatio: '3/4', background: 'var(--bg-tertiary)', overflow: 'hidden' }}>
         <Link href={`/product/${product.id}`}>
+          { }
           <img
             src={product.image}
             alt={product.name}

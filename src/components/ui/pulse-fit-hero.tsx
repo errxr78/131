@@ -268,6 +268,7 @@ export function PulseFitHero({
               >
                 <div className="flex flex-row -space-x-2">
                   {socialProof.avatars.map((avatar, index) => (
+                     
                     <img
                       key={index}
                       src={avatar}
@@ -360,6 +361,7 @@ export function PulseFitHero({
                 }}
               >
                 {/* Image */}
+                { }
                 <img
                   src={program.image}
                   alt={program.title}

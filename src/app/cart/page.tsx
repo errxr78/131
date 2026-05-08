@@ -30,7 +30,7 @@ export default function CartPage() {
             {/* Items */}
             <div>
               <div style={{ borderTop: '1px solid rgba(0,0,0,0.12)' }}>
-                {items.map((item, i) => (
+                {items.map((item) => (
                   <motion.div key={`${item.id}-${item.selectedSize}-${item.selectedColor}`} layout initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                     style={{ display: 'grid', gridTemplateColumns: '100px 1fr auto', gap: '1.5rem', padding: '1.5rem 0', borderBottom: '1px solid rgba(0,0,0,0.08)', alignItems: 'start' }}
                   >
